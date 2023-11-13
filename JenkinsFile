@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the source code from your repository
+                git 'https://github.com/chahine-mahfoudh/5SIM2_Groupe4_DevOps_Project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Your build commands or scripts
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Your test commands or scripts
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Your deployment commands or scripts
+                sh './deploy.sh'
+            }
+        }
+    }
+}
