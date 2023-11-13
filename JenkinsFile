@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the source code from your repository
-                git 'https://github.com/chahine-mahfoudh/5SIM2_Groupe4_DevOps_Project.git'
+                git 'https://github.com/your-username/your-repo.git'
             }
         }
 
@@ -15,19 +15,5 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-
-        stage('Test') {
-            steps {
-                // Your test commands or scripts
-                sh 'mvn test'
-            }
         }
-
-        stage('Deploy') {
-            steps {
-                // Your deployment commands or scripts
-                sh './deploy.sh'
-            }
         }
-    }
-}
