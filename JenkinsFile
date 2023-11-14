@@ -35,7 +35,7 @@ pipeline {
                   withCredentials([string(credentialsId: 'pass', variable: 'DOCKER_PASSWORD')]) {
                     sh '''
                            docker login -u chahinemahfoudh -p 191JMT4619
-                           docker push chahinemahfoudh/alpine
+                           docker push chahinemahfoudh/devops
                          '''
                   }
                 }
