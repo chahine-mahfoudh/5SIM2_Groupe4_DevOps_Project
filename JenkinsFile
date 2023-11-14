@@ -12,14 +12,10 @@ pipeline {
                 sh 'mvn clean install -Dmaven.test.skip=true'
               }
             }
-            stage("SONARQUBE") {
-              steps {
-               sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonarqube"
-                }
-            }
+
             stage("MOCKITO") {
               steps {
-                sh "mvn test -Dtest=tn.esprit.devopsproject.service.ActivityServiceImpTest"
+                sh "mvn test -Dtest=tn.esprit.devops_project.service.ActivityServiceImpTest"
               }
             }
 
