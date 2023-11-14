@@ -1,15 +1,6 @@
 version: '3'
 
 services:
-  nexus:
-    image: sonatype/nexus3:latest
-    ports:
-      - "8082:8082"
-    networks:
-      - devops-network
-    volumes:
-      - nexus-data:/nexus-data
-
   mysql:
     image: mysql:latest
     networks:
@@ -27,5 +18,4 @@ networks:
     driver: bridge
 
 volumes:
-  nexus-data:
   mysql-data:
