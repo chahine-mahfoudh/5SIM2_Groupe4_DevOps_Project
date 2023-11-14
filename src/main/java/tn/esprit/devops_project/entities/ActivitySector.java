@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
+@Builder
 @Entity
 @Getter
 @Setter
@@ -27,5 +28,6 @@ public class ActivitySector  implements Serializable {
         @ManyToMany(mappedBy="activitySectors")
         @JsonIgnore
         private Set<Supplier> suppliers;
+
 
 }
