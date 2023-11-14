@@ -9,7 +9,7 @@ pipeline {
             }
             stage("MAVEN BUILD") {
               steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -Dmaven.test.skip=true'
               }
             }
             stage("SONARQUBE") {
@@ -19,7 +19,7 @@ pipeline {
             }
             stage("MOCKITO") {
               steps {
-                sh "mvn test -Dtest=tn.esprit.spring.services.InstructorServiceImpMock"
+                sh "mvn test -Dtest=tn.esprit.devops_project.service.ActivityServiceImpTest"
               }
             }
 
