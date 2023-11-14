@@ -30,16 +30,7 @@ pipeline {
                   sh 'docker build -t chahinemahfoudh .'
                 }
              }
-             stage('DOCKER HUB') {
-                steps {
-                  withCredentials([string(credentialsId: 'pass', variable: 'DOCKER_PASSWORD')]) {
-                    sh '''
-                           docker login -u chahinemahfoudh -p 191JMT4619
-                           docker push chahinemahfoudh/devops
-                         '''
-                  }
-                }
-             }
+
              stage('Docker COMPOSE') {
                   steps {
                       script {
