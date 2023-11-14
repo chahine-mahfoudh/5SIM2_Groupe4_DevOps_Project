@@ -27,7 +27,7 @@ pipeline {
 
              stage("DOCKER IMAGE") {
                 steps {
-                  sh 'docker build -t mariemessghaier/gestion-station-ski:latest .'
+                  sh 'docker build -t chahine_mahfoudh/DevOps_Project:latest .'
                 }
              }
              stage('DOCKER HUB') {
