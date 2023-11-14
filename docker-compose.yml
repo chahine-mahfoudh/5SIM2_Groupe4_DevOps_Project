@@ -5,7 +5,7 @@ services:
     image: sonarqube:latest
     ports:
       - "9000:9000"
-      - "9092:9092"
+      - "9093:9093"
     networks:
       - devops-network
     environment:
