@@ -2,6 +2,6 @@ FROM openjdk:11
 RUN apt-get update && \
     apt-get install -y curl && \
     rm -rf /var/lib/apt/lists/*
-RUN curl -u admin:nexus -o devops-2.1.jar "http://192.168.1.114:8081/repository/maven-releases/tn/esprit/devops/2.1/DevOps_Project-2.1.jar" -L
+RUN curl -u admin:nexus -o devops-2.1.jar "http://192.168.1.114:8081/repository/maven-releases/tn/esprit/DevOps_Project-2.1.jar" -L
 ENTRYPOINT ["java","-jar","/devops-2.1.jar"]
 EXPOSE 8082

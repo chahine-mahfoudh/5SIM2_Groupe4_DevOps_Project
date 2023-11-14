@@ -27,15 +27,15 @@ pipeline {
 
              stage("DOCKER IMAGE") {
                 steps {
-                  sh 'docker build -t chahine_mahfoudh/devopsproject:latest .'
+                  sh 'docker build -t chahinemahfoudh/alpine:latest .'
                 }
              }
              stage('DOCKER HUB') {
                 steps {
                   withCredentials([string(credentialsId: 'pass', variable: 'DOCKER_PASSWORD')]) {
                     sh '''
-                           docker login -u mariemessghaier -p docker_099
-                           docker push mariemessghaier/gestion-station-ski
+                           docker login -u chahinemahfoudh -p 191JMT4619
+                           docker push chahinemahfoudh/alpine
                          '''
                   }
                 }
