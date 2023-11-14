@@ -15,7 +15,7 @@ pipeline {
 
             stage("MOCKITO") {
               steps {
-                sh "mvn test -Dtest=tn.esprit.devops_project.service.ActivityServiceImpTest"
+                sh "mvn test -Dtest= tn.esprit.devops_project.service.ActivityServiceImpTest"
               }
             }
 
