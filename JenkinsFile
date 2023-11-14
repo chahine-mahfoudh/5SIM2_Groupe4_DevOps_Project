@@ -9,13 +9,13 @@ pipeline {
             }
             stage("MAVEN BUILD") {
               steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -Dmaven.test.skip=true'
               }
             }
 
             stage("MOCKITO") {
               steps {
-                sh "mvn test -Dtest= tn.esprit.devops_project.service.ActivityServiceImpTest"
+                sh "mvn test"
               }
             }
 
